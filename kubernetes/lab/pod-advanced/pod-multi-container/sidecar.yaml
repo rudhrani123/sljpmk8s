@@ -8,14 +8,14 @@ spec:
     emptyDir: {}
   containers:
   - name: main-container
-    image: alpine 
+    image: busybox 
     command: ["/bin/sh"]
-    args: ["-c", "while true; do date >> /var/log/index.html; sleep 10;done"]
+    args: ["-c", "while true; do date >> /tmp/index-input.html; sleep 10;done"]
     volumeMounts:
     - name: shared-logs
       mountPath: /var/log
   - name: sidecar-container
-    image: nginx
+    image: busybox
     ports:
       - containerPort: 80
     volumeMounts:
