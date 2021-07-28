@@ -9,4 +9,4 @@ spec:
   - image: nginx
     name: nginx
   dnsPolicy: ClusterFirst
-  restartPolicy: Always
+  restartPolicy: 60
